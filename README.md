@@ -14,6 +14,10 @@ pnpm dev
 bun dev
 ```
 
+## Testing the Middleware
+
+To test the middleware, make sure to change the `baseUrl` variable in the `middleware.ts` file to `http://localhost:3000` (the development port). This will allow you to test the middleware locally before deploying it to a production environment.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
