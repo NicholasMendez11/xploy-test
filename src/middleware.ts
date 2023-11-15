@@ -1,22 +1,20 @@
-//!ESTO TIENE QUE PASAR LA AUNQUE NO SE USE EL REMEMBER
 import { NextResponse } from "next/server";
 import type { NextRequest } from 'next/server'
 
-
 export default function middleware(req:NextRequest) {
   let loggedInToken = req.cookies.get("credentials");
-  console.log("middleware", loggedInToken)
-  let url = req.url;
+  let pathname = req.nextUrl.pathname;
+  const baseUrl = process.env.BASE_URL;
 
-  if (!loggedInToken && url.includes("/home")) {
-    return NextResponse.redirect("http://localhost:3000/auth");
+  if (!loggedInToken && pathname === "/home") {
+    return NextResponse.redirect(`${baseUrl}/auth`);
   }
 
-  if (loggedInToken && url.includes("/auth")) {
-    return NextResponse.redirect("http://localhost:3000/home");
+  if (loggedInToken && pathname === "/auth") {
+    return NextResponse.redirect(`${baseUrl}/home`);
   }
 
-  if(req.url =="http://localhost:3000" || req.url =="http://localhost:3000/"){
-    return NextResponse.redirect("http://localhost:3000/auth");
+  if(pathname === "/" || pathname === ""){
+    return NextResponse.redirect(`${baseUrl}/auth`);
   }
 }
