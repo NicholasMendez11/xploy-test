@@ -28,7 +28,7 @@ function useAuth() {
       Cookies.set(
         "credentials",
         JSON.stringify({ email: data.email, password: data.password }),
-        { expires: 0.00003472 } // The cookie will expire after loged in
+        { expires: 0.00001172 } // The cookie will be removed after 1 minute
       );
     }
     router.push("/home");
