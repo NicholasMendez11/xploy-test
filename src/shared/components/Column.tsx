@@ -107,7 +107,7 @@ function ColumnContainer({
             cursor-grab
             text-[#358FC1]
             bg-[#3590c127]
-            hover:bg-[#358FC1] hover:text-white hover:font-semibold transition-all duration-300 
+            hover:bg-[#358FC1] hover:text-black hover:font-semibold transition-all duration-300 
      
             rounded-lg
            
