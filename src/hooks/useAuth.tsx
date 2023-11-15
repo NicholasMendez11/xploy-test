@@ -14,7 +14,8 @@ function useAuth() {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<any> = (data) => {
-    if (data.email !== "admin@xploy.com" && data.password !== "Xploy!123") {
+    console.log(data);
+    if (data.email !== "admin@xploy.com" || data.password !== "Xploy!123") {
       return toast.error("Invalid Credentials");
     }
     toast.success("Login Successful");
